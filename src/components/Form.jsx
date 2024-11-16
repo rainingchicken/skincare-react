@@ -1,10 +1,18 @@
 import React, { useState } from "react";
 
-const Form = ({ handleAdd }) => {
+const Form = ({ dispatch }) => {
   const [inputValue, setInputValue] = useState("");
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleAdd({ skincareStep: inputValue, id: Date.now() });
+    // handleAdd({ skincareStep: inputValue, id: Date.now() });
+    dispatch({
+      type: "ADD",
+      payload: {
+        skincareStep: inputValue,
+        id: Date.now(),
+      },
+    });
     // setInputValue(""); //reset inputValue to empty string
   };
   const onChange = (e) => {
