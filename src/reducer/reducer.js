@@ -1,19 +1,22 @@
-import { useReducer } from "react";
+//usestate
+//const [varaible, setter] = useState(initialSkincareSteps)
+//setter => {
+//   varaible = newValue
+// }
+export const initialSkincareSteps = [];
 
-export const initialSkincareSteps = [
-  // {
-  //   skincareStep: "",
-  //   id: "",
-  // },
-];
-
-const reducer = (state, action) => {
+//action is whatever the user is doing
+const reducer = (skincareSteps, action) => {
   switch (action.type) {
+    //fn handleAdd
     case "ADD":
-      console.log(state);
-      return [...state, action.payload];
+      return [...skincareSteps, action.payload];
+    case "BANANA":
+      return ["Bruh"];
+    case "EDIT":
+      return;
     default:
-      return state;
+      return skincareSteps;
   }
 };
 

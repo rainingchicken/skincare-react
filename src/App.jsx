@@ -5,15 +5,21 @@ import skincareContext from "./context/createContext";
 import reducer, { initialSkincareSteps } from "./reducer/reducer";
 
 function App() {
+  //    state, dispatch == setter
   const [skincareSteps, dispatch] = useReducer(reducer, initialSkincareSteps);
 
   // const [skincareSteps, setSkincareSteps] = useState([]);
 
-  //add fn
+  //functions
+
   // const handleAdd = (newItem) => {
   //   setSkincareSteps([...skincareSteps, newItem]);
   //   console.log(skincareSteps);
   // };
+
+  // const BANANA = () => {
+  //   setSkincareSteps(['bruh'])
+  // }
 
   return (
     <>
