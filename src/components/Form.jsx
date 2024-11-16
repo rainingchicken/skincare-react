@@ -5,14 +5,14 @@ const Form = ({ handleAdd }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     handleAdd({ skincareStep: inputValue, id: Date.now() });
-    setInputValue("");
+    // setInputValue(""); //reset inputValue to empty string
   };
   const onChange = (e) => {
     setInputValue(e.target.value);
   };
   return (
     <form onSubmit={handleSubmit}>
-      <input type="text" name="" id="" onChange={onChange} />
+      <input type="text" name="" id="" value={inputValue} onChange={onChange} />
       <input type="submit" value="Submit" />
     </form>
   );

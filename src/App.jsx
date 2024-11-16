@@ -1,6 +1,8 @@
 import { useState } from "react";
 import Skincare from "./components/Skincare";
 import Form from "./components/Form";
+import { Component1 } from "./components/Component1";
+import skincareContext from "./context/createContext";
 
 function App() {
   const [skincareSteps, setSkincareSteps] = useState([]);
@@ -14,7 +16,10 @@ function App() {
   return (
     <>
       <Form handleAdd={handleAdd} />
-      <Skincare skincareSteps={skincareSteps} />
+      {/* {make skincareSteps available to use in any children of component1} */}
+      <skincareContext.Provider value={skincareSteps}>
+        <Component1 />
+      </skincareContext.Provider>
     </>
   );
 }

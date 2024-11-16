@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import Display from "./Display";
+import skincareContext from "../context/createContext";
 
-const Skincare = ({ skincareSteps }) => {
+//component 3
+const Skincare = () => {
+  const skincareSteps = useContext(skincareContext);
   return (
     <div>
       {skincareSteps &&
